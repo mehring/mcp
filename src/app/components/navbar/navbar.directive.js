@@ -122,14 +122,28 @@
         ];
 
         vm.expandMenuItem = function(id) {
-            console.log('expanding' + id);
             angular.forEach(vm.menu, function(navItem) {
                 if (navItem.id == id) {
                     navItem.expanded = !navItem.expanded;
+                    if (!navItem.children.length) { vm.selectedMenuId = id; }
                 } else {
                     navItem.expanded = false;
                 }
             });
+        }
+
+        vm.hasChildSelected = function(id) {
+            var returnValue = false;
+            angular.forEach(vm.menu, function(navItem) {
+                if (navItem.id == id) {
+                    angular.forEach(navItem.children, function(navChild) {
+                        if (vm.selectedMenuId == navChild.id) {
+                            returnValue = true;
+                        }
+                    });
+                }
+            });
+            return returnValue;
         }
 
     }

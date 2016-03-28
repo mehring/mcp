@@ -12,19 +12,21 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
-
+.nomargins { margin: 0 !important; }
+.nopadding { padding: 0 !important; }
 
 .right-content {
+  position: relative;
   padding: 0 !important;
   background-color: #EAEFF4;
   height:100vh;
+  max-height: 100vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  > .right-content-body { margin-top: 60px; }
 }
-
-
-
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

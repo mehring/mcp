@@ -10,14 +10,15 @@
 
     <ul class="nav nav-pills nav-stacked mcp-sidenav">
         <li ng-repeat="navItem in vm.menu"
-            ng-class="{'selected': vm.selectedMenuId == navItem.id || navItem.expanded}">
+            ng-class="{'selected': vm.selectedMenuId == navItem.id ||
+                                   navItem.expanded ||
+                                   vm.hasChildSelected(navItem.id)}">
 
             <a ng-href="{{ navItem.href }}"
                target="{{ navItem.target }}"
                alt="{{ navItem.alt }}"
                id="{{ navItem.id }}"
-               ng-click="vm.expandMenuItem(navItem.id);
-                         vm.selectedMenuId = navItem.id">
+               ng-click="vm.expandMenuItem(navItem.id);">
 
                 <span ng-if="navItem.icon.length"
                       ng-class="navItem.icon"></span>
@@ -27,7 +28,7 @@
                 <span ng-if="navItem.children.length"
                       ng-class="{'pull-right': true,
                                  'glyphicon': true,
-                                 'glyphicon-chevron-left': true,
+                                 'glyphicon-menu-left': true,
                                  'up': !navItem.expanded,
                                  'down': navItem.expanded}"></span>
 

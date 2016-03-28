@@ -1,0 +1,24 @@
+.titlebar {
+  position: absolute;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-bottom: thin solid #CFDBE7;
+  -webkit-box-shadow: 2px 0 10px 0 rgba(0,0,0,0.3);
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,0.3);
+  align-items: center;
+
+  .titlebar-title {
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 15px;
+  }
+
+  .titlebar-link {
+    font-size: 1.5rem;
+  }
+
+}

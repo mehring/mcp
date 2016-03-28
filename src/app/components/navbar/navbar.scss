@@ -10,7 +10,7 @@ $bgColorSubMenuHover: #14335C;
 
 
 .left-nav {
-  padding: 0 !important;
+  padding: 0 0 0 0 !important;
   background: rgb(28,67,122); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(28,67,122,1) 0%, rgba(67,103,152,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  rgba(28,67,122,1) 0%,rgba(67,103,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -67,6 +67,10 @@ $bgColorSubMenuHover: #14335C;
 
     a:hover {
       background-color: $bgColorHover !important;
+    }
+
+    a:focus {
+      background-color: transparent !important;
     }
 
   }
